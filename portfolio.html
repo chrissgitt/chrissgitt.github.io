@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Christophe Gittens | Portfolio</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<div class="header-container">
+    <body class="main-container">    
+        <header class="header-animation">
+            <nav class="nav main-nav">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                </ul>
+            </nav>
+            <h1 class="name">Hi! I'm Christophe</h1>                                
+            <div class="wrapper">
+                <div class="static-txt">I'm a</div>
+                <ul class="dynamic-txts">
+                    <li><span>Computer Scientist</span></li>
+                    <li><span>Software Developer</span></li>
+                    <li><span>Tech Enthusiast</span></li>
+                    <li><span>Freelancer</span></li>
+                </ul>
+        </header>
+        </div>
+    </div>
+        <section class="content-section">
+            <h2 class="section-header-alt header-left">Projects</h2><br>
+            <div class="translucent-content-container paragraph-section text-format-dark">
+                <div class="content-wrapper">
+                    <div class="portfolio-content-column">
+                        <img class="photo" src="Images/raytracerImage-2.png" alt="Ray Tracer">
+                        <h3 class="section-sub-header">Ray Tracer</h3>
+                            <p class="left-top-indent align-left">
+                                Built in C++, this Ray Tracer can construct simple shapes such as spheres, cylinders, cones, boxes and toruses within a three dimensional space. 
+                                It uses only standard library functions, math library functions and the SDL2 library to generate and display the Ray Traced image.
+                            </p>
+                            <p class="left-top-indent align-left hyperlink">
+                                See the source code for yourself on my <a href="https://github.com/chrissgitt/raytracer"  target="_blank"> GitHub. </a>
+                            </p>
+                            <p class = "left-top-indent align-left">
+                                <img src=Images/icons8-c++-50-2.png class="icon"></a></li>
+                            </p>
+                            <br>
+                    </div></ul>
+                </div>
+            </div><br>
+
+        <h2 class="section-header-alt header-left">Experience</h2><br>
+        <div class="translucent-content-container paragraph-section text-format-dark">
+            <h3 class="section-sub-header"> Summer Internship | First Citizens Bank</h3>
+
+            <p class="left-top-indent">In my banking internship my data analytics activities were centered around building internal tools to perform data anlytics and data cleaning</p>
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th class = "section-sub-header">Project Name</th>
+                            <th class = "section-sub-header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="project-title section-sub-sub-header">Staff Monitoring Application</td>
+                            <td class="text-format-light">
+                                A Python application which allows the user to upload data stored in text files and Excel files and takes user input for a threshold. It subsequently obtains the staff transactions subject to review.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-title section-sub-sub-header">System Access Verification Application</td>
+                            <td class="text-format-light">
+                                A Python application which allows the user to upload data stored in text files and takes user input to search for specific user IDs, Customer Information File numbers (CIFs), and/or account numbers. It maps the system accesses in one file to transactions stored in another.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-title section-sub-sub-header">File Formatting and Data Cleaning Application</td>
+                            <td class="text-format-light">
+                                A Python application which allows the user to drag and drop data stored in text files and format them so that the data for each entry is on a single line and not spilling over onto new lines. The cleaned data is reformatted in an Excel file.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <p class = "left-indent align-left">
+                <img src=Images/icons8-python-50.png class="icon">
+                <img src=Images/icons8-text-file-50-2.png class="icon">
+                <img src="Images/icons8-xls-50.png" class="icon">
+            </p><br>
+        </div>
+        <br><br>
+        <div class="translucent-content-container paragraph-section text-format-dark">
+            <h3 class="section-sub-header"> Student Assistant | Department of Computing and Information Technology</h3> 
+            <p class="left-top-indent">
+                In my final year of my bachelor's degree I took on a Student Teacher 
+                role within the Department of Computing and Information Technology
+                at my University which was geared towards helping students who faced 
+                difficulties in their courses. Covering core Computer Science concepts
+                such as Computer Architecture, Data Structures, Computer Networks, Computer
+                Programming and Enterprise Database Systems.
+            </p><br>
+        </div>
+    </section><br>
+    <footer class="footer-container">
+        <div class="container main-footer-container">
+            <h3 class="name name-footer name-large">Christophe Gittens</h3>
+            <ul class="nav footer-nav">
+                <li><a href="https://www.linkedin.com/in/christophegittens/" target="blank"><img src =Images/icons8-linkedin-24.png class="icon-home"></a></li>
+                <li><a href="https://github.com/chrissgitt" target="_blank"><img src=Images/icons8-github-24.png class="icon-home"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader-wrapper");
+            loader.style.transition = "opacity 0.5s ease-out";
+            loader.style.opacity = "0";
+            setTimeout(() => loader.style.display = "none", 500); // Match the duration of the transition
+        });
+    </script>
+    </body>
+</html>

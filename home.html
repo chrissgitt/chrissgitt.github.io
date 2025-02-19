@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Christophe Gittens | Home</title>
+    <link rel = "stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oO2DdFeGzXqgAiZKzBWBbwmS0HJ2XtnVPllRxjzeFpwNCSd2FapN4vi5EzXU2G6w" crossorigin="anonymous"></script>
+</head>
+    <div class="header-container">
+    <body>    
+        <header class="header-animation">
+            <nav class="nav main-nav">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+            </nav>
+            <h1 class="name">Hi! I'm Christophe</h1>                                
+            <div class="wrapper">
+                <div class="static-txt">I'm a</div>
+                <ul class="dynamic-txts">
+                    <li><span>Computer Scientist</span></li>
+                    <li><span>Software Developer</span></li>
+                    <li><span>Tech Enthusiast</span></li>
+                    <li><span>Freelancer</span></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+        <section class="content-section-home translucent-content-container-home"> 
+            <div class="content-wrapper">
+                <div class="content-column content-column-left">
+                    <h2 class="home-header align-left">&lt/Coder&gt</h2>
+                    <p class="text-format align-left">C/C++, Python, Java, SQL, HTML, CSS, R, LaTeX</p>
+                </div>
+                <div class="content-column">
+                    <img src="Images/76B475D0-0F2F-4A8F-9929-A32325736A91-removebg-preview.png" alt="Profile Photo">
+                </div>
+                <div class="content-column content-column-right">
+                    <h2 class="home-header align-right">Data Scientist <img src="Images/icons8-combo-chart-50.png" class = "icon-home"></h2>
+                    <p class="text-format align-right">Developed internal tools to perform data analytics using Python</p>
+                </div>
+            </div>  
+        </section><br>
+        <div class="transparent-content-container container-narrow content-column">
+        <div class="align-left-margin mac-window">
+            <div class="top-bar">
+              <div class="button close"></div>
+              <div class="button minimize"></div>
+              <div class="button maximize"></div>
+            </div>
+            <section class="content-section-home content">
+                <div>
+                    <h2 class="section-header-alternate header-left">&gt_Hello World!</h2>
+                    <div>
+                        <p class="text-format align-left-margin">
+                            I'm a student who is passionate about Computers, Technology, Data and Mathematics. 
+                            I enjoy creating dynamic solutions towards addressing challenging real-world problems.
+                            I am enthusiastic about programming and building tools to improve lives and streamline processes.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <br>
+        </div>
+        <footer class="footer-container">
+            <div class="container main-footer-container">
+                <h3 class="name name-footer name-large">Christophe Gittens</h3>
+                <ul class="nav footer-nav">
+                    <li><a href="https://www.linkedin.com/in/christophegittens/" target="blank"><img src =Images/icons8-linkedin-24.png class="icon-home"></a></li>
+                    <li><a href="https://github.com/chrissgitt" target="_blank"><img src=Images/icons8-github-24.png class="icon-home"></a></li>
+                    </ul>
+            </div>
+        </footer>
+        <div class="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+        <script>
+            window.addEventListener("load", function () {
+                const loader = document.querySelector(".loader-wrapper");
+                loader.style.transition = "opacity 0.5s ease-out";
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 500); // Match the duration of the transition
+            });
+        </script>
+        </body>
+</html>
