@@ -104,6 +104,10 @@ body{
     padding: 0em;
 }
 
+.disclaimer {
+    font-family: "oswald";
+}
+
 .icon {
     max-width: 3vw; /* Responsive sizing based on viewport width */
     height: auto;
@@ -677,12 +681,18 @@ body{
         font-size: 3em;
     }
 
+    .disclaimer {
+        font-family: "oswald";
+        font-size: 0.5em;
+    }
+
     .icon {
         max-width: 35px;
     }
 
     .icon-home {
         width: 20px;
+        margin: -10px;
     }
 
     .mac-window {
@@ -791,6 +801,7 @@ body{
 
     .icon-home {
         width: 15px;
+        margin: -10px;
     }
 
     .loader{
