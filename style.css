@@ -44,7 +44,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', oswald;
+    font-family: 'Oswald', sans-serif;
 }
 
 body{
@@ -52,7 +52,7 @@ body{
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    min-height: 100wh;
+    min-height: 100vh;
     background-color:#030423;
     background-size: 40px 40px;
     background-image:
@@ -314,7 +314,7 @@ body{
 }
 
 .section-header {
-    font-family: "oswald";
+    font-family: "Oswald", sans-serif;
     font-weight: normal;
     color: #fff;
     text-align: center;
@@ -339,7 +339,7 @@ body{
 }
 
 .home-header {
-    font-family: "oswald";
+    font-family: "Oswald", sans-serif;
     font-weight: normal;
     color: #fff;
     font-size: 3em;
@@ -382,7 +382,7 @@ body{
 }
 
 .section-sub-header {
-    font-family: "oswald";
+    font-family: "Oswald", sans-serif;
     font-weight: normal;
     margin-right: 1.5em;
     margin-left: 0.5em;
@@ -394,7 +394,7 @@ body{
 }
 
 .section-sub-sub-header{
-    font-family: "oswald";
+    font-family: "Oswald", sans-serif;
     font-weight: normal;
     margin-right: 1.5em;
     margin-left: 0.5em;
@@ -721,7 +721,7 @@ body{
     }
 
     .disclaimer {
-        font-family: "oswald";
+        font-family: "Oswald", sans-serif;
         font-size: 0.5em;
     }
 
