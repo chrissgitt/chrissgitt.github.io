@@ -10,7 +10,7 @@
     <title>Christophe Gittens</title>
     <meta name="title" content="Christophe Gittens" />
     <meta name="description" content="Welcome to my website!" />
-    <meta property="og:type content="website" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://christophegittens.com" />
     <meta property="og:title" content="Christophe Gittens" />
     <meta property="og:description" content="Welcome to my website!" />
@@ -69,7 +69,7 @@
                     <h2 class="section-header-alternate header-left">&gt_Hello World!</h2>
                     <div>
                         <p class="text-format align-left-margin">
-                            I'm a student who is passionate about Computers, Technology, Data and Mathematics. 
+                            I'm a graduate who is passionate about Computers, Technology, Data and Mathematics. 
                             I enjoy creating dynamic solutions towards addressing challenging real-world problems.
                             I am enthusiastic about programming and building tools to improve lives and streamline processes.
                         </p>
@@ -77,7 +77,51 @@
                 </div>
             </section>
         </div>
-        <br>
+        <br><br>
+        <section>
+            <div class="translucent-content-container-home paragraph-section text-format-dark">
+                <div class="content-wrapper">
+                    <div class="portfolio-content-column"><br>
+                        <h2 class="section-header-alternate">Spotlight</h2>
+                        <div class="carousel" aria-roledescription="carousel">
+                            <button class="carousel-button prev" aria-label="Previous slide">‹</button>
+                            <div class="carousel-track-container">
+                                <ul class="carousel-track">
+                                    <li class="carousel-slide">
+                                        <img src="Images/raytracerImage-2.png" class="photo" alt="Ray Tracer project">
+                                        <h3 class="section-sub-header">Ray Tracer</h3>
+                                        <p class="left-top-indent text-format-dark">C++ ray tracer generating spheres, cylinders and complex shapes. Uses SDL2 for rendering. <a class="hyperlink" href="portfolio.html">See project</a></p>
+                                    </li>
+                                    <li class="carousel-slide">
+                                        <img src="Images/game-2.png" class="photo" alt="RPG project">
+                                        <h3 class="section-sub-header">Role Playing Game [RPG]</h3>
+                                        <p class="left-top-indent text-format-dark">A browser-based RPG built with JavaScript, HTML and CSS. Pixel-art exploration and combat systems. <a class="hyperlink" href="portfolio.html">See project</a></p>
+                                    </li>
+                                    <li class="carousel-slide">
+                                        <img src="Images/Election-prediction.png" class="photo" alt="Electoral prediction">
+                                        <h3 class="section-sub-header">Electoral Prediction Model</h3>
+                                        <p class="left-top-indent text-format-dark">End-to-end political forecasting pipeline (Python, ML, GeoJSON visualisation). <a class="hyperlink" href="portfolio.html">See project</a></p>
+                                    </li>
+                                    <li class="carousel-slide about-slide">
+                                        <img src="Images/IMG_7287.jpg" class="photo" alt="Java programming">
+                                        <h3 class="section-sub-header">About</h3>
+                                        <p class="left-top-indent text-format-dark">I study Computer Science with a focus on data and finance. I build tools for data cleaning, modelling and web interfaces which interact with APIs. <a class="hyperlink" href="about.html">Read more</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="carousel-button next" aria-label="Next slide">›</button>
+                        </div>
+                            <div class="carousel-nav">
+                                <button class="carousel-indicator current"></button>
+                                <button class="carousel-indicator"></button>
+                                <button class="carousel-indicator"></button>
+                                <button class="carousel-indicator"></button>
+                            </div>
+                            <br>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
         </div>
         <footer class="footer-container">
             <div class="container main-footer-container">
@@ -101,6 +145,103 @@
                 loader.style.opacity = "0";
                 setTimeout(() => loader.style.display = "none", 500); // Match the duration of the transition
             });
+
+            // Carousel functionality
+            (function(){
+                console.log('Carousel script initializing...');
+                const track = document.querySelector('.carousel-track');
+                if (!track) {
+                    console.error('Carousel track not found');
+                    return;
+                }
+                
+                const slides = Array.from(track.children);
+                console.log('Found ' + slides.length + ' slides');
+                
+                const nextButton = document.querySelector('.carousel-button.next');
+                const prevButton = document.querySelector('.carousel-button.prev');
+                const dotsNav = document.querySelector('.carousel-nav');
+                const dots = Array.from(dotsNav.children);
+
+                console.log('Buttons:', nextButton, prevButton);
+                console.log('Dots:', dots.length);
+
+                // Initialize with first slide
+                if (slides.length > 0) {
+                    slides[0].classList.add('current-slide');
+                    console.log('Added current-slide to first slide');
+                }
+                if (dots.length > 0) {
+                    dots[0].classList.add('current');
+                    console.log('Added current to first dot');
+                }
+
+                const moveToSlide = (currentSlide, targetSlide) => {
+                    currentSlide.classList.remove('current-slide');
+                    targetSlide.classList.add('current-slide');
+                }
+
+                const updateDots = (currentDot, targetDot) => {
+                    currentDot.classList.remove('current');
+                    targetDot.classList.add('current');
+                }
+
+                const getCurrentIndex = () => {
+                    const current = track.querySelector('.current-slide');
+                    return slides.indexOf(current);
+                }
+
+                if (prevButton) {
+                    prevButton.addEventListener('click', e => {
+                        e.preventDefault();
+                        const currentIndex = getCurrentIndex();
+                        let targetIndex = currentIndex - 1;
+                        if (targetIndex < 0) targetIndex = slides.length - 1;
+                        
+                        const currentSlide = slides[currentIndex];
+                        const targetSlide = slides[targetIndex];
+                        moveToSlide(currentSlide, targetSlide);
+                        
+                        const currentDot = dots[currentIndex];
+                        const targetDot = dots[targetIndex];
+                        updateDots(currentDot, targetDot);
+                    });
+                }
+
+                if (nextButton) {
+                    nextButton.addEventListener('click', e => {
+                        e.preventDefault();
+                        const currentIndex = getCurrentIndex();
+                        let targetIndex = currentIndex + 1;
+                        if (targetIndex >= slides.length) targetIndex = 0;
+                        
+                        const currentSlide = slides[currentIndex];
+                        const targetSlide = slides[targetIndex];
+                        moveToSlide(currentSlide, targetSlide);
+                        
+                        const currentDot = dots[currentIndex];
+                        const targetDot = dots[targetIndex];
+                        updateDots(currentDot, targetDot);
+                    });
+                }
+
+                if (dotsNav) {
+                    dotsNav.addEventListener('click', e => {
+                        const targetDot = e.target.closest('button');
+                        if (!targetDot) return;
+                        const targetIndex = dots.indexOf(targetDot);
+                        if (targetIndex < 0) return;
+                        
+                        const currentIndex = getCurrentIndex();
+                        const currentSlide = slides[currentIndex];
+                        const targetSlide = slides[targetIndex];
+                        moveToSlide(currentSlide, targetSlide);
+                        
+                        const currentDot = dots[currentIndex];
+                        updateDots(currentDot, targetDot);
+                    });
+                }
+            })();
         </script>
         </body>
 </html>

@@ -166,6 +166,27 @@ body{
     text-decoration: none;
 }
 
+/* Direct link styling when hyperlink class is applied to the link itself */
+a.hyperlink:link {
+    color: rgb(125, 174, 94);
+}
+
+a.hyperlink:visited {
+    color: rgb(198, 165, 238);
+}
+
+a.hyperlink:hover {
+    color: rgb(228, 141, 35);
+}
+
+a.hyperlink:active {
+    color: rgb(125, 174, 94);
+}
+
+a.hyperlink {
+    text-decoration: none;
+}
+
 
 .name{
     text-align: left;
@@ -853,4 +874,111 @@ body{
         font-size: 20px;
     }
 
+}
+
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em 0;
+    gap: 0.5em;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2.5em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 200%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+}
+
+.carousel-slide.current-slide {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 1.0em;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-indicator.current {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .carousel-button {
+        font-size: 1.8em;
+        padding: 0.3em 0.7em;
+    }
+    .carousel-track-container {
+        max-width: 90%;
+    }
 }
