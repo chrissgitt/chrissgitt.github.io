@@ -547,21 +547,17 @@ body{
 .timeline::before{
     content: "";
     position: absolute;
-    left: 1.2em; /* x position of the vertical line */
-    top: 1.6em; /* start a little below the container top */
-    bottom: 1.6em; /* end a little above the container bottom */
+    left: 3em; /* x position of the vertical line */
+    top: 30px; /* start a little below the container top */
+    bottom: 30px; /* end a little above the container bottom */
     width: 2px;
     background: rgba(255,255,255,0.9); /* white vertical line */
-}
-
-.timeline .section-sub-header{
-    position: relative;
 }
 
 .timeline .section-sub-header::before{
     content: "";
     position: absolute;
-    left: -2.6em; /* place the circle on the vertical line */
+    left: -1.1em; /* place the circle on the vertical line */
     top: 0.8em; /* vertically center against header padding */
     width: 12px;
     height: 12px;
@@ -570,11 +566,21 @@ body{
     box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
 }
 
+.timeline .section-sub-header{
+    position: relative;
+}
+
+
+
 /* Small screens: reduce left padding */
 @media (max-width: 768px){
-    .timeline{ padding-left: 2.2em; }
+    .timeline{ padding-left: 2.0em; }
     .timeline::before{ left: 0.8em; }
     .timeline .section-sub-header::before{ left: -1.7em; }
+    .post-timeline{
+    position: relative;
+    padding-left: 3.5em; /* space for the timeline */
+}
 }
 
 @keyframes slide{
